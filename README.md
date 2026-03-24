@@ -23,3 +23,35 @@ O maior erro em separar microsserviços é separar por módulos, e não por ling
 
 1. Replicação de dados com consistência eventual
 2. Overhead operacional (qualquer configuração precisa ser replicada)
+
+## Glossário
+
+### Message Broker
+
+Sistema de mensageria assíncrono (RabbitMQ ou Kafka)
+
+### API Gateway
+
+Aplicação que vive entre o frontend e todos os microsserviços
+Como se fosse um BFF
+
+### Distributed Tracing
+
+Criação de um traceId na primeira requisição e trafegado junto com todas as mensagens até o fim do processamento
+
+### Idempotência
+
+Forma de evitar que uma requisição seja processada mais de uma vez em caso de falhas
+
+### SAGA pattern
+
+Transações que contemplam múltiplos serviços devem ser quebradas em micro-transações
+
+### Circuit Breaker
+
+Proxy que valida se o próximo microsserviço está disponível antes de enviar as requisições, como um rate-limitter interno a aplicação
+
+### BFF (Backend For Frontend)
+
+Serviço que unifica requisições de vários serviços para um único retorno ao frontend
+Recomendação do Diego: GraphQL
