@@ -1,57 +1,57 @@
-# Curso sobre Microsserviços Escaláveis
+# Scalable Microservices Course
 
-Curso sobre microsserviços escaláveis da RocketSeat
+RocketSeat course on scalable microservices
 
-## Teoria
+## Theory
 
-Microsserviços são:
+Microservices are:
 
-- Serviços implantados independentemente
-- modelos de arquitetura
-- Arquitetura de infraestrutura, não de código
+- Independently deployed services
+- Architecture models
+- Infrastructure architecture, not code architecture
 
-O maior erro em separar microsserviços é separar por módulos, e não por linguagem de negócio
+The biggest mistake when splitting microservices is to split them by modules instead of by business language
 
-### Vantagens dos microsserviços
+### Advantages of microservices
 
-1. Infraestrutura específica por necessecidade de serviço
-2. Linguagem, banco de dados, ferramentas específicas por necessidade
-3. Escalabilidade direcionada
-4. Desenvolvimento paralelo em grandes times
+1. Infrastructure specific to each service's needs
+2. Language, database and tools specific to each need
+3. Targeted scalability
+4. Parallel development in large teams
 
-### Desvantagens dos microsserviços
+### Disadvantages of microservices
 
-1. Replicação de dados com consistência eventual
-2. Overhead operacional (qualquer configuração precisa ser replicada)
+1. Data replication with eventual consistency
+2. Operational overhead (any configuration has to be replicated)
 
-## Glossário
+## Glossary
 
 ### Message Broker
 
-Sistema de mensageria assíncrono (RabbitMQ ou Kafka)
+Asynchronous messaging system (RabbitMQ or Kafka)
 
 ### API Gateway
 
-Aplicação que vive entre o frontend e todos os microsserviços
-Como se fosse um BFF
+Application that sits between the frontend and all the microservices
+Like a BFF
 
 ### Distributed Tracing
 
-Criação de um traceId na primeira requisição e trafegado junto com todas as mensagens até o fim do processamento
+A traceId created on the first request and carried along with every message until processing ends
 
-### Idempotência
+### Idempotency
 
-Forma de evitar que uma requisição seja processada mais de uma vez em caso de falhas
+A way to stop a request from being processed more than once when something fails
 
 ### SAGA pattern
 
-Transações que contemplam múltiplos serviços devem ser quebradas em micro-transações
+Transactions that span multiple services must be broken into micro-transactions
 
 ### Circuit Breaker
 
-Proxy que valida se o próximo microsserviço está disponível antes de enviar as requisições, como um rate-limitter interno a aplicação
+Proxy that checks whether the next microservice is available before sending requests to it, like a rate limiter inside the application
 
 ### BFF (Backend For Frontend)
 
-Serviço que unifica requisições de vários serviços para um único retorno ao frontend
-Recomendação do Diego: GraphQL
+Service that combines requests to several services into a single response to the frontend
+Diego's recommendation: GraphQL
